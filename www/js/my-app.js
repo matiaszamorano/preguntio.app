@@ -342,3 +342,4 @@ myApp.onPageInit('feature', function (page) {
 
 myApp.onPageInit('page', function (page) {
 });
+
