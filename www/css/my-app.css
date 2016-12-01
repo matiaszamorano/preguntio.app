@@ -1,3 +1,9 @@
 .swiper-slide {
     background: white;
 }
+
+.pregunta {
+    font-size: 2em;
+    line-height: 1.5em;
+    text-align: center;
+}

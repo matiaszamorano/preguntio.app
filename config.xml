@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.coolappz.preguntio_app" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>preguntio_app</name>
+    <name>Pregunt.io</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        La aplicación para descubrir preguntas.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="matzam@gmail.com" href="http://www.matiaszamorano.com">
+        Uva
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
