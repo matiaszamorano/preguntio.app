@@ -1,15 +1,42 @@
-var template = $$('#pregunta-template').html();
+recargarPreguntas();
 
-var compiledTemplate = Template7.compile(template);
+function recargarPreguntas() {
+    var template = $$('#pregunta-template').html();
 
-$$.get('https://preguntio.herokuapp.com/preguntas', null, function (data) {
-    var html = compiledTemplate(JSON.parse(data)._embedded);
+    var compiledTemplate = Template7.compile(template);
 
-    $$('#preguntas-slide').html(html);
+    $$.get('https://preguntio.herokuapp.com/preguntas', null, function (data) {
+        var html = compiledTemplate(JSON.parse(data)._embedded);
 
-    var mySwiper = myApp.swiper('.swiper-container', {
-        speed: 400,
-        spaceBetween: 100
+        $$('#preguntas-slide').html(html);
+
+        var mySwiper = myApp.swiper('.swiper-container', {
+            speed: 400,
+            spaceBetween: 100
+        });
+
     });
+}
 
+$$(document).on('pageInit', function () {
+    var queryForm = null;
+    $$('#enviar-pregunta').on('click', function () {
+        queryForm = myApp.formToJSON('#nueva-pregunta-form');
+        var parameters = {
+            url: 'https://preguntio.herokuapp.com/preguntas',
+            method: "POST",
+            cache: false,
+            contentType: "application/json",
+            processData: true,
+            success: function (data) {
+                recargarPreguntas();
+                myApp.mainView.back();
+            },
+            dataType: 'json',
+            data: JSON.stringify(queryForm)
+        };
+
+        $$.ajax(parameters);
+        return false;
+    });
 });

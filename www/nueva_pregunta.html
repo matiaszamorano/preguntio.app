@@ -8,7 +8,7 @@
 
     <div class="toolbar tabbar">
         <div class="toolbar-inner">
-            <a href="#" class="active tab-link">Enviar</a>
+            <a href="#" id="enviar-pregunta" class="active tab-link">Enviar</a>
         </div>
     </div>
     <!---------- NAME ---------->
@@ -16,19 +16,21 @@
         <h2>Envianos tus preguntas</h2>
     </div>
     <div class="content-block-title">Envianos tus preguntas</div>
-    <div class="list-block">
-        <ul>
-            <!-- Additional "align-top" class for correct textarea alignment -->
-            <li class="align-top">
-                <div class="item-content">
-                    <div class="item-inner">
-                        <div class="item-input">
-                            <textarea placeholder="¿Qué pregunta puedo compartir?"></textarea>
+    <form id="nueva-pregunta-form">
+        <div class="list-block">
+            <ul>
+                <!-- Additional "align-top" class for correct textarea alignment -->
+                <li class="align-top">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <textarea name="contenido" class="form-contenido" placeholder="¿Qué pregunta puedo compartir?"></textarea>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </li>
-        </ul>
-    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
 
 </div>
