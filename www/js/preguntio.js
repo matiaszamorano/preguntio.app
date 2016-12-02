@@ -15,6 +15,26 @@ function recargarPreguntas() {
             spaceBetween: 100
         });
 
+        $$('.borrar-pregunta').on('click', function () {
+            var url = $$(this).attr('data-url');
+            var parameters = {
+                url: url,
+                method: "DELETE",
+                processData: true,
+                complete: function (data) {
+                    myApp.addNotification({
+                        message: 'Pregunta Eliminada'
+                    });
+                    recargarPreguntas();
+                    window.location.reload(); //mejorar
+                },
+                dataType: 'json'
+            };
+            $$.ajax(parameters);
+
+            return false;
+        });
+
     });
 }
 
@@ -30,7 +50,12 @@ $$(document).on('pageInit', function () {
             processData: true,
             success: function (data) {
                 myApp.addNotification({
-                    message: 'Pregunta Enviada'
+                    message: 'Pregunta Enviada',
+                    button: {
+                        text: 'close',
+                        color: 'blue',
+                        close: true
+                    }
                 });
                 recargarPreguntas();
                 myApp.mainView.back();
@@ -42,4 +67,5 @@ $$(document).on('pageInit', function () {
         $$.ajax(parameters);
         return false;
     });
+
 });

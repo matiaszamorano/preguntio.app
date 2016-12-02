@@ -34,30 +34,26 @@
 
 .azul
 {
-    background-color: #3498DB;
-    border-bottom: 5px solid #2980B9;
-    text-shadow: 0px -2px #2980B9;
+    color: #3498DB;
 }
 
 .rojo
 {
-    background-color: #E74C3C;
-    border-bottom: 5px solid #BD3E31;
-    text-shadow: 0px -2px #BD3E31;
+    color: #E74C3C;
 }
 
 .verde
 {
-    background-color: #82BF56;
-    border-bottom: 5px solid #669644;
-    text-shadow: 0px -2px #669644;
+    color: #82BF56;
 }
 
 .amarillo
 {
-    background-color: #F2CF66;
-    border-bottom: 5px solid #D1B358;
-    text-shadow: 0px -2px #D1B358;
+    color: #F2CF66;
+}
+
+.gris {
+    color: #009688;
 }
 
 .action-button:active
@@ -69,8 +65,13 @@
 
 .acciones-pregunta {
     position: fixed;
-    bottom: 0;
+    bottom: 50px;
     width: 100%;
+    text-align: right;
+}
+
+.acciones-pregunta .material-icons {
+    font-size: 50px;
 }
 
 .contenedor-pregunta {
