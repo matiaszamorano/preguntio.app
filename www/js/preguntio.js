@@ -29,6 +29,9 @@ $$(document).on('pageInit', function () {
             contentType: "application/json",
             processData: true,
             success: function (data) {
+                myApp.addNotification({
+                    message: 'Pregunta Enviada'
+                });
                 recargarPreguntas();
                 myApp.mainView.back();
             },
