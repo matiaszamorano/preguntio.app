@@ -15,7 +15,8 @@
         <!-- Path to your custom app styles-->
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,500italic,500,400italic,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700' rel='stylesheet' type='text/css'>
-        <!--<link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">-->
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
         <link href="css/stylesheets/template.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <link href="css/stylesheets/responsive.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -79,9 +80,6 @@
                                     <!-- Pagination, if required -->
                                     <div class="swiper-pagination"></div>
                                 </div>
-                                <a class="botonazo favorito" href="javascript:void(0);"><i class="material-icons">favorite</i></a>
-                                <a class="botonazo comentario" href="javascript:void(0);"><i class="material-icons">chat_bubble</i></a>
-                                <a class="botonazo down" href="javascript:void(0);"><i class="material-icons">thumb_down</i></a>
                             </div>
 
                         </div>
@@ -90,19 +88,13 @@
             </div>
         </div>
         <script id="pregunta-template" type="text/template7">
-                    {{#each preguntas}}
+            {{#each preguntas}}
             <div class="swiper-slide">
-                <div class="card facebook-card">
-                    <div class="card-content">
-                        <div class="card-content-inner">
-                            <p class="pregunta">{{contenido}}</p>
-                            <p class="color-gray">Me Gusta: 126 Respuestas: 36</p>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="link">Me Gusta</a>
-                        <a href="#" class="link">Responder</a>
-                        <a href="#" class="link">Descartar</a>
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">{{contenido}}</p>
+                    <div class="row acciones-pregunta">
+                    <a href="#" class="action-button shadow animate verde"><i class="material-icons">thumb_up</i></a>
+                    <a href="#" class="action-button shadow animate rojo"><i class="material-icons">thumb_down</i></a>
                     </div>
                 </div>
             </div>

@@ -3,58 +3,71 @@
 }
 
 .pregunta {
-    font-size: 2em;
+    font-size: 40px;
     line-height: 1.5em;
     text-align: center;
 }
 
-.botonazo {
-    position: absolute;
-    color: rgba(255,255,255,1);
-    text-decoration: none;
-    background-color: rgba(219,87,5,1);
-    font-family: 'Yanone Kaffeesatz';
-    font-weight: 700;
-    font-size: 3em;
-    display: block;
-    padding: 4px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-    -webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
-    -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
-    box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
-    margin: 10px auto;
-    width: 65px;
-    text-align: center;
-    line-height: 50px;
-
-    -webkit-transition: all .1s ease;
-    -moz-transition: all .1s ease;
-    -ms-transition: all .1s ease;
-    -o-transition: all .1s ease;
-    transition: all .1s ease;
+.animate
+{
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
 }
 
-botonazo:active {
-    -webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
-    -moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
-    box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+.action-button
+{
     position: relative;
-    top: 6px;
+    padding: 10px 40px;
+    margin: 0px 5px 10px 0px;
+    float: left;
+    border-radius: 10px;
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+    color: #FFF;
+    text-decoration: none;	
 }
 
-.favorito {
-    bottom: 10px;
-    left: 10px;
+.azul
+{
+    background-color: #3498DB;
+    border-bottom: 5px solid #2980B9;
+    text-shadow: 0px -2px #2980B9;
 }
 
-.comentario {
-    bottom: 10px;
-    left: 40%;
+.rojo
+{
+    background-color: #E74C3C;
+    border-bottom: 5px solid #BD3E31;
+    text-shadow: 0px -2px #BD3E31;
 }
 
-.down {
-    bottom: 10px;
-    right: 10px;
+.verde
+{
+    background-color: #82BF56;
+    border-bottom: 5px solid #669644;
+    text-shadow: 0px -2px #669644;
+}
+
+.amarillo
+{
+    background-color: #F2CF66;
+    border-bottom: 5px solid #D1B358;
+    text-shadow: 0px -2px #D1B358;
+}
+
+.action-button:active
+{
+    transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+    border-bottom: 1px solid;
+}
+
+.acciones-pregunta {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.contenedor-pregunta {
+    min-height: 500px;
 }
