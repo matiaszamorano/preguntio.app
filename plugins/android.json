@@ -8,7 +8,7 @@
     },
     "installed_plugins": {
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.coolappz.preguntio_app"
+            "PACKAGE_NAME": "com.preguntio.preguntio_app"
         }
     },
     "dependent_plugins": {}
