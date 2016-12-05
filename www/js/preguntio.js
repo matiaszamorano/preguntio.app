@@ -1,5 +1,7 @@
 recargarPreguntas();
 
+var mySwiper;
+
 function recargarPreguntas() {
     var template = $$('#pregunta-template').html();
 
@@ -10,40 +12,17 @@ function recargarPreguntas() {
 
         $$('#preguntas-slide').html(html);
 
-        var mySwiper = myApp.swiper('.swiper-container', {
+        mySwiper = myApp.swiper('.swiper-container', {
             speed: 400,
             spaceBetween: 100
         });
 
-        $$('.borrar-pregunta').on('click', function () {
-            var url = $$(this).attr('data-url');
-            var $pregunta = $$(this).parents(".swiper-slide");
-            console.log($pregunta);
-            var parameters = {
-                url: url,
-                method: "DELETE",
-                processData: true,
-                complete: function (data) {
-                    mySwiper.removeSlide(mySwiper.activeIndex);
-                    myApp.addNotification({
-                        message: 'Pregunta Eliminada',
-                        closeOnClick: true,
-                    });
-                },
-                dataType: 'json'
-            };
-            $$.ajax(parameters);
-
-            return false;
-        });
-
+        $$('.borrar-pregunta').on('click', borrarPregunta);
     });
 }
 
 $$(document).on('pageInit', function () {
-    var queryForm = null;
     $$('#enviar-pregunta').on('click', crearPregunta);
-
 });
 
 function crearPregunta() {
@@ -69,3 +48,25 @@ function crearPregunta() {
     $$.ajax(parameters);
     return false;
 }
+
+function borrarPregunta() {
+    var url = $$(this).attr('data-url');
+    var parameters = {
+        url: url,
+        method: "DELETE",
+        processData: true,
+        complete: function (data) {
+            mySwiper.removeSlide(mySwiper.activeIndex);
+            myApp.addNotification({
+                message: 'Pregunta Eliminada',
+                closeOnClick: true,
+            });
+        },
+        dataType: 'json'
+    };
+    $$.ajax(parameters);
+
+    return false;
+}
+
+
