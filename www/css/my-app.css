@@ -13,25 +13,6 @@
     text-align: center;
 }
 
-.animate
-{
-    transition: all 0.1s;
-    -webkit-transition: all 0.1s;
-}
-
-.action-button
-{
-    position: relative;
-    padding: 10px 40px;
-    margin: 0px 5px 10px 0px;
-    float: left;
-    border-radius: 10px;
-    font-family: 'Pacifico', cursive;
-    font-size: 25px;
-    color: #FFF;
-    text-decoration: none;	
-}
-
 .azul
 {
     color: #3498DB;
@@ -54,13 +35,6 @@
 
 .gris {
     color: #009688;
-}
-
-.action-button:active
-{
-    transform: translate(0px,5px);
-    -webkit-transform: translate(0px,5px);
-    border-bottom: 1px solid;
 }
 
 .acciones-pregunta {

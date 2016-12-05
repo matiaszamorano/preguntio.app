@@ -17,16 +17,18 @@ function recargarPreguntas() {
 
         $$('.borrar-pregunta').on('click', function () {
             var url = $$(this).attr('data-url');
+            var $pregunta = $$(this).parents(".swiper-slide");
+            console.log($pregunta);
             var parameters = {
                 url: url,
                 method: "DELETE",
                 processData: true,
                 complete: function (data) {
+                    mySwiper.removeSlide(mySwiper.activeIndex);
                     myApp.addNotification({
-                        message: 'Pregunta Eliminada'
+                        message: 'Pregunta Eliminada',
+                        closeOnClick: true,
                     });
-                    recargarPreguntas();
-                    window.location.reload(); //mejorar
                 },
                 dataType: 'json'
             };
@@ -40,32 +42,30 @@ function recargarPreguntas() {
 
 $$(document).on('pageInit', function () {
     var queryForm = null;
-    $$('#enviar-pregunta').on('click', function () {
-        queryForm = myApp.formToJSON('#nueva-pregunta-form');
-        var parameters = {
-            url: 'https://preguntio.herokuapp.com/preguntas',
-            method: "POST",
-            cache: false,
-            contentType: "application/json",
-            processData: true,
-            success: function (data) {
-                myApp.addNotification({
-                    message: 'Pregunta Enviada',
-                    button: {
-                        text: 'close',
-                        color: 'blue',
-                        close: true
-                    }
-                });
-                recargarPreguntas();
-                myApp.mainView.back();
-            },
-            dataType: 'json',
-            data: JSON.stringify(queryForm)
-        };
-
-        $$.ajax(parameters);
-        return false;
-    });
+    $$('#enviar-pregunta').on('click', crearPregunta);
 
 });
+
+function crearPregunta() {
+    queryForm = myApp.formToJSON('#nueva-pregunta-form');
+    var parameters = {
+        url: 'https://preguntio.herokuapp.com/preguntas',
+        method: "POST",
+        cache: false,
+        contentType: "application/json",
+        processData: true,
+        success: function (data) {
+            myApp.mainView.back();
+            myApp.addNotification({
+                message: 'Pregunta Enviada',
+                closeOnClick: true
+            });
+            recargarPreguntas();
+        },
+        dataType: 'json',
+        data: JSON.stringify(queryForm)
+    };
+
+    $$.ajax(parameters);
+    return false;
+}
