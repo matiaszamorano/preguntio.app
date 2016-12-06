@@ -15,11 +15,12 @@
         <link href="css/framework7.material.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/framework7.material.colors.min.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="css/welcomescreen.css" rel="stylesheet" type="text/css"/>
         <link href="css/my-app.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <body class="theme-teal">
-        <script type="text/javascript" src="js/framework7.min.js"></script>
+
         <!-- Views -->
         <div class="views">
             <!-- Your main view, should have "view-main" class -->
@@ -41,7 +42,7 @@
                         <!-- Scrollable page content -->
                         <div class="page-content">
                             <div class="content-block">
-                                <div class="swiper-container">
+                                <div class="swiper-container-preguntas">
                                     <!-- Slides wrapper -->
                                     <div id="preguntas-slide" class="swiper-wrapper">
                                         <!-- Slides -->
@@ -56,15 +57,6 @@
                 </div>
             </div>
         </div>
-        <!--        <div class="swiper-slide">
-                    <div class="contenedor-pregunta">
-                        <p class="pregunta">{{contenido}}</p>
-                        <div class="acciones-pregunta">
-                            <i class="material-icons verde">favorite</i>
-                            <i class="material-icons rojo">delete_forever</i>
-                        </div>
-                    </div>
-                </div>-->
         <script id="pregunta-template" type="text/template7">
             {{#each preguntas}}
             <div class="swiper-slide">
@@ -72,7 +64,7 @@
             <p class="pregunta">{{contenido}}</p>
             <div class="acciones-pregunta">
             <a href="#" data-url="{{_links.pregunta.href}}" class="borrar-pregunta">
-                <i class="material-icons gris">delete_forever</i>
+            <i class="material-icons gris">delete_forever</i>
             </a>
             </div>
             </div>
@@ -80,7 +72,9 @@
             {{/each}}
         </script>
         <!-- Path to Framework7 Library JS-->
+        <script type="text/javascript" src="js/framework7.min.js"></script>
         <script src="js/template7.min.js" type="text/javascript"></script>
+        <script src="js/welcomescreen.js" type="text/javascript"></script>
         <!-- Path to your app js-->
         <script type="text/javascript" src="js/my-app.js"></script>
         <script src="js/preguntio.js" type="text/javascript"></script>
