@@ -1,10 +1,12 @@
 /*******************************************************************************
     Tutorial
 *******************************************************************************/
-.pnt-tutorial-icon {
+.pnt-tutorial-icon,
+.pnt-tutorial-icon .material-icons{
     font-size: 250px;
     line-height: 170px;
 }
+
 
 .pnt-tutorial-close-btn {
     background: #FFF;
