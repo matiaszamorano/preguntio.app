@@ -1,7 +1,7 @@
 function initApp() {
+    var mySwiper;
     recargarPreguntas();
 
-    var mySwiper;
 
     function recargarPreguntas() {
         var template = $$('#pregunta-template').html();
@@ -9,8 +9,9 @@ function initApp() {
         var compiledTemplate = Template7.compile(template);
 
         $$.get('https://preguntio.herokuapp.com/preguntas', null, function (data) {
-            var html = compiledTemplate(JSON.parse(data)._embedded);
 
+            var html = compiledTemplate(JSON.parse(data)._embedded);
+            console.log(html);
             $$('#preguntas-slide').html(html);
 
             mySwiper = myApp.swiper('.swiper-container-preguntas', {

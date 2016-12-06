@@ -6,7 +6,7 @@ var $$ = Dom7;
 
 var mainView = myApp.addView('.view-main');
 
-myApp.init();
+//myApp.init();
 
 //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 // 
@@ -37,14 +37,14 @@ function initTutorial() {
     var options = {
         bgcolor: '#009688',
         fontcolor: '#FFF',
-        closeButtonText: 'Saltar'
+        closeButtonText: 'Saltar',
+        onClosed: initApp
     };
 
     var welcomescreen = myApp.welcomescreen(welcomescreen_slides, options);
 
     $$(".pnt-js-tutorial-close-btn").click(function () {
         welcomescreen.close();
-        initApp();
     });
 }
 //
