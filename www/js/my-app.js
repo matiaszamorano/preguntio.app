@@ -47,7 +47,7 @@ function initTutorial() {
         welcomescreen.close();
     });
 }
-//
-//$$('a').on('click', function (e) { //Close panel when you open a new page
-//    myApp.closePanel();
-//});
+
+$$('a').on('click', function (e) { //Close panel when you open a new page
+    myApp.closePanel();
+});
