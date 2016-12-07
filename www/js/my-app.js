@@ -13,7 +13,11 @@ var mainView = myApp.addView('.view-main');
 // Tutorial inicial
 // 
 //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-initTutorial();
+if (!preguntio.service.getStorage("tutorial")) {
+    initTutorial();
+} else {
+    initApp();
+}
 
 function initTutorial() {
     var welcomescreen_slides = [

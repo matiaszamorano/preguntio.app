@@ -1,4 +1,7 @@
 function initApp() {
+    
+    preguntio.service.setStorage("tutorial", 1);
+    
     var mySwiper;
     recargarPreguntas();
 
