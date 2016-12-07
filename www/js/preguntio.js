@@ -11,7 +11,6 @@ function initApp() {
         $$.get('https://preguntio.herokuapp.com/preguntas', null, function (data) {
 
             var html = compiledTemplate(JSON.parse(data)._embedded);
-            console.log(html);
             $$('#preguntas-slide').html(html);
 
             mySwiper = myApp.swiper('.swiper-container-preguntas', {

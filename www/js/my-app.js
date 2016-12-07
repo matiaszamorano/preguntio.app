@@ -30,7 +30,7 @@ function initTutorial() {
         {
             id: 'slide2',
             picture: '<div class="pnt-tutorial-icon"><i class="material-icons">star_border</i></div>',
-            text: 'Guardá tus preguntas favoritas.<br><br><a class="pnt-tutorial-close-btn pnt-js-tutorial-close-btn" href="#">Empezar</a>'
+            text: 'Es hora de dejar de pensar en respuestas y guardar tus preguntas favoritas.<br><br><a class="pnt-tutorial-close-btn pnt-js-tutorial-close-btn" href="#">Empezar</a>'
         }
     ];
 
