@@ -6,18 +6,28 @@ var $$ = Dom7;
 
 var mainView = myApp.addView('.view-main');
 
-//myApp.init();
+myApp.onPageInit('login-screen', function (page) {
+    var pageContainer = $$(page.container);
+    pageContainer.find('.list-button').on('click', function () {
+        var usuario = {};
+        usuario.username = pageContainer.find('input[name="username"]').val();
+        usuario.password = pageContainer.find('input[name="password"]').val();
+        preguntio.service.usuario.login(usuario);
+        mainView.router.loadPage("index.html");
+    });
+});
 
-//''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-// 
-// Tutorial inicial
-// 
-//''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-if (!preguntio.service.getStorage("tutorial")) {
-    initTutorial();
+if (!preguntio.service.usuario.estaLogeado()) {
+    mainView.router.loadPage("login-screen-page.html");
 } else {
-    initApp();
+    if (!preguntio.service.getStorage("tutorial")) {
+        initTutorial();
+    } else {
+        initApp();
+    }
 }
+
+
 
 function initTutorial() {
     var welcomescreen_slides = [
