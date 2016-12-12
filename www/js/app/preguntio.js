@@ -3,27 +3,31 @@ var preguntio = (function () {
     function init() {
         myApp.onPageInit('login-screen', function (page) {
             var pageContainer = $$(page.container);
-            pageContainer.find('.list-button').on('click', function () {
+            pageContainer.find('.boton-login').on('click', function () {
                 var usuario = {};
                 usuario.username = pageContainer.find('input[name="username"]').val();
                 usuario.password = pageContainer.find('input[name="password"]').val();
                 preguntio.service.usuario.login(usuario);
-                mainView.router.loadPage("index.html");
+                location.reload();
             });
         });
 
         if (!preguntio.service.usuario.estaLogeado()) {
             mainView.router.loadPage("login-screen-page.html");
         } else {
-            if (!preguntio.service.getStorage("tutorial")) {
-                preguntio.ui.initTutorial();
-            } else {
-                initApp();
-            }
+            mostrarTutorial();
         }
         $$('a').on('click', function (e) { //Close panel when you open a new page
             myApp.closePanel();
         });
+    }
+
+    function mostrarTutorial() {
+        if (!preguntio.service.getStorage("tutorial")) {
+            preguntio.ui.initTutorial();
+        } else {
+            initApp();
+        }
     }
 
     function initApp() {
