@@ -1,10 +1,6 @@
-function initApp() {
-    
-    preguntio.service.setStorage("tutorial", 1);
-    
-    var mySwiper;
-    recargarPreguntas();
+preguntio.ui.preguntas = (function () {
 
+    var mySwiper;
 
     function recargarPreguntas() {
         var template = $$('#pregunta-template').html();
@@ -24,10 +20,6 @@ function initApp() {
             $$('.borrar-pregunta').on('click', borrarPregunta);
         });
     }
-
-    $$(document).on('pageInit', function () {
-        $$('#enviar-pregunta').on('click', crearPregunta);
-    });
 
     function crearPregunta() {
         queryForm = myApp.formToJSON('#nueva-pregunta-form');
@@ -73,7 +65,12 @@ function initApp() {
         return false;
     }
 
-}
+    return {
+        recargarPreguntas: recargarPreguntas,
+        crearPregunta: crearPregunta,
+        borrarPregunta: borrarPregunta
+    };
+})();
 
 
 
