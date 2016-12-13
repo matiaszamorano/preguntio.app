@@ -23,7 +23,7 @@ var preguntio = (function () {
     }
 
     function mostrarTutorial() {
-        if (!preguntio.service.getStorage("tutorial")) {
+        if (!JSON.parse(window.localStorage.getItem("tutorial"))) {
             preguntio.ui.initTutorial();
         } else {
             initApp();
@@ -31,7 +31,7 @@ var preguntio = (function () {
     }
 
     function initApp() {
-        preguntio.service.setStorage("tutorial", 1);
+        window.localStorage.setItem("tutorial", 1);
 
         preguntio.ui.preguntas.recargarPreguntas();
 
