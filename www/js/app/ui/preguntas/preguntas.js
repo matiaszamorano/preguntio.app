@@ -7,7 +7,7 @@ preguntio.ui.preguntas = (function () {
 
         var compiledTemplate = Template7.compile(template);
 
-        $$.get('https://preguntio.herokuapp.com/preguntas', null, function (data) {
+        preguntio.service.preguntas.get(function (data) {
 
             var html = compiledTemplate(JSON.parse(data)._embedded);
             $$('#preguntas-slide').html(html);
