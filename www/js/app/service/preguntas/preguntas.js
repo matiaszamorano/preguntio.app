@@ -11,9 +11,17 @@ preguntio.service.preguntas = (function () {
     }
 
     function noMeGusta(pregunta) {
+        var preguntas = JSON.parse(window.localStorage.getItem(keyNoMeGustaPregunta));
+        if (preguntas == null) {
+            preguntas = [];
+        }
+        preguntas.push(pregunta);
+        window.localStorage.setItem(keyNoMeGustaPregunta, JSON.stringify(preguntas));
+        console.log(preguntas);
     }
 
     return {
-        get: get
+        get: get,
+        noMeGusta: noMeGusta
     };
 })();

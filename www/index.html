@@ -72,7 +72,7 @@
 
         <script id="pregunta-template" type="text/template7">
             {{#each preguntas}}
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-id="{{_links.self.href}}">
             <div class="contenedor-pregunta">
             <p class="pregunta">{{contenido}}</p>
             </div>
@@ -102,28 +102,28 @@
             var mainView = myApp.addView('.view-main');
             preguntio.init();
 
-            document.addEventListener("deviceready", onDeviceReady, false);
-            function onDeviceReady() {
-                window.plugins.sim.getSimInfo(successCallback, errorCallback);
-            }
-
-            function successCallback(result) {
-                alert(result.simSerialNumber);
-            }
-
-            function errorCallback(error) {
-                alert(error);
-            }
-
-// Android only: check permission 
-            function hasReadPermission() {
-                window.plugins.sim.hasReadPermission(successCallback, errorCallback);
-            }
-
-// Android only: request permission 
-            function requestReadPermission() {
-                window.plugins.sim.requestReadPermission(successCallback, errorCallback);
-            }
+//            document.addEventListener("deviceready", onDeviceReady, false);
+//            function onDeviceReady() {
+//                window.plugins.sim.getSimInfo(successCallback, errorCallback);
+//            }
+//
+//            function successCallback(result) {
+//                alert(result.simSerialNumber);
+//            }
+//
+//            function errorCallback(error) {
+//                alert(error);
+//            }
+//
+//// Android only: check permission 
+//            function hasReadPermission() {
+//                window.plugins.sim.hasReadPermission(successCallback, errorCallback);
+//            }
+//
+//// Android only: request permission 
+//            function requestReadPermission() {
+//                window.plugins.sim.requestReadPermission(successCallback, errorCallback);
+//            }
 
 
         </script>

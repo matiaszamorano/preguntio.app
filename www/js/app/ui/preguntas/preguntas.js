@@ -18,6 +18,10 @@ preguntio.ui.preguntas = (function () {
             });
 
             $$('.borrar-pregunta').on('click', borrarPregunta);
+
+            mySwiper.on('onSlideChangeEnd', function () {
+                console.log(mySwiper.activeIndex);
+            });
         });
     }
 
