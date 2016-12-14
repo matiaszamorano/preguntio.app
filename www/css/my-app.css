@@ -121,32 +121,13 @@
     padding: 0 20px;
 }
 
-a.action-button.blue
+a.action-button.white
 {
-    color: #3498DB;
-    text-shadow: 0px -2px #2980B9;
-}
-
-a.action-button.red
-{
-    color: #E74C3C;
-    text-shadow: 0px -2px #BD3E31;
-}
-
-a.action-button.green
-{
-    color: #82BF56;
-    text-shadow: 0px -2px #669644;
-}
-
-a.action-button.yellow
-{
-    color: #F2CF66;
-    text-shadow: 0px -2px #D1B358;
+    color: #FFF;
 }
 
 a.action-button.grey {
-    color: #c7c7c7;
+    color: #222;
     text-shadow: 0px 0px #D1B358;
 }
 

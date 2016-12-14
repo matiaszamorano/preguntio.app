@@ -34,17 +34,17 @@ preguntio.ui.preguntas = (function () {
 
     function pintarOpinion() {
         var opinion = $$(".swiper-slide.swiper-slide-active").attr('data-me-gusta');
-        $$(".no-me-gusta-icono").addClass("red");
-        $$(".me-gusta-icono").addClass("green");
+        $$(".no-me-gusta-icono").addClass("white");
+        $$(".me-gusta-icono").addClass("white");
         if (opinion === "1") {
-            $$(".me-gusta-icono").addClass("green");
+            $$(".me-gusta-icono").addClass("white");
             $$(".me-gusta-icono").removeClass("grey");
             $$(".no-me-gusta-icono").addClass("grey");
-            $$(".no-me-gusta-icono").removeClass("red");
+            $$(".no-me-gusta-icono").removeClass("white");
         } else if (opinion === "0") {
             $$(".me-gusta-icono").addClass("grey");
-            $$(".me-gusta-icono").removeClass("green");
-            $$(".no-me-gusta-icono").addClass("red");
+            $$(".me-gusta-icono").removeClass("white");
+            $$(".no-me-gusta-icono").addClass("white");
             $$(".no-me-gusta-icono").removeClass("grey");
         } else {
             $$(".me-gusta-icono").removeClass("grey");
