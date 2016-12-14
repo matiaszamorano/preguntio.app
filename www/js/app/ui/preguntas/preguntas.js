@@ -22,12 +22,41 @@ preguntio.ui.preguntas = (function () {
                 spaceBetween: 100
             });
 
+            pintarOpinion();
+
             $$('.borrar-pregunta').on('click', borrarPregunta);
 
-            mySwiper.on('onSlideChangeEnd', function () {
-                console.log(mySwiper.activeIndex);
-            });
+            $$('.preguntio-opinion').on('click', guardarOpinion);
+
+            mySwiper.on('onSlideChangeEnd', pintarOpinion);
         });
+    }
+
+    function pintarOpinion() {
+        var opinion = $$(".swiper-slide.swiper-slide-active").attr('data-me-gusta');
+        if (opinion === "1") {
+            $$(".me-gusta-icono").addClass("verde");
+            $$(".no-me-gusta-icono").removeClass("verde");
+        } else if (opinion === "0") {
+            $$(".me-gusta-icono").removeClass("verde");
+            $$(".no-me-gusta-icono").addClass("verde");
+        } else {
+            $$(".me-gusta-icono").removeClass("verde");
+            $$(".no-me-gusta-icono").removeClass("verde");
+        }
+    }
+
+    function guardarOpinion() {
+        var meGusta = $$(this).attr('data-opinion');
+        $$(".swiper-slide.swiper-slide-active").attr('data-me-gusta', meGusta);
+        var id = $$(".swiper-slide.swiper-slide-active").attr('data-id');
+        preguntio.service.preguntas.guardarOpinion(id, meGusta);
+        if (meGusta === "1") {
+            mySwiper.slideNext();
+        } else if (meGusta === "0") {
+            mySwiper.removeSlide(mySwiper.activeIndex);
+        }
+        pintarOpinion();
     }
 
     function crearPregunta() {
