@@ -9,7 +9,12 @@ preguntio.ui.preguntas = (function () {
 
         preguntio.service.preguntas.get(function (data) {
 
-            var html = compiledTemplate(JSON.parse(data)._embedded);
+            var preguntas = JSON.parse(data)._embedded;
+            for (var i = 0; i < preguntas.preguntas.length; i++) {
+                preguntas.preguntas[i].meGusta = window.localStorage.getItem(preguntas.preguntas[i]._links.self.href);
+            }
+
+            var html = compiledTemplate(preguntas);
             $$('#preguntas-slide').html(html);
 
             mySwiper = myApp.swiper('.swiper-container-preguntas', {
