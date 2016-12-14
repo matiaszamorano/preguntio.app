@@ -1,6 +1,7 @@
 preguntio.ui.preguntas = (function () {
 
     var mySwiper;
+    var timeoutOpinion;
 
     function recargarPreguntas() {
         var template = $$('#pregunta-template').html();
@@ -53,7 +54,8 @@ preguntio.ui.preguntas = (function () {
             $meGusta.removeClass("grey");
             $noMeGusta.removeClass("grey");
         }
-        setTimeout(function () {
+        clearTimeout(timeoutOpinion);
+        timeoutOpinion = setTimeout(function () {
             document.getElementById('toolbar').style.visibility = "visible";
         }, 2000);
     }
