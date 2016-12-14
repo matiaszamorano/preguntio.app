@@ -54,7 +54,9 @@ preguntio.ui.preguntas = (function () {
         if (meGusta === "1") {
             mySwiper.slideNext();
         } else if (meGusta === "0") {
-            mySwiper.removeSlide(mySwiper.activeIndex);
+            var actual = mySwiper.activeIndex;
+            mySwiper.slideNext();
+            mySwiper.removeSlide(actual);
         }
         pintarOpinion();
     }
