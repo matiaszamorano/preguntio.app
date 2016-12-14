@@ -12,11 +12,7 @@ var preguntio = (function () {
             });
         });
 
-        if (!preguntio.service.usuario.estaLogeado()) {
-            mainView.router.loadPage("login-screen-page.html");
-        } else {
-            mostrarTutorial();
-        }
+        mostrarTutorial();
         $$('a').on('click', function (e) { //Close panel when you open a new page
             myApp.closePanel();
         });

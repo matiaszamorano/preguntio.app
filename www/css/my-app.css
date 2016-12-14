@@ -30,7 +30,7 @@
 
 
 .swiper-slide {
-    background: white;
+    background: none;
 }
 
 
@@ -38,7 +38,9 @@
     font-size: 40px;
     line-height: 1.5em;
     text-align: center;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight: bold;
+    color: #fff;
 }
 
 .azul
@@ -78,4 +80,76 @@
 
 .contenedor-pregunta {
     height: 80vh;
+}
+
+.action-button
+{
+    position: relative;
+    padding: 10px 10px;
+    margin: 0px 10px 10px 0px;
+    float: left;
+    border-radius: 10px;
+    font-family: 'Pacifico', cursive;
+    font-size: 50px;
+    color: #FFF;
+    text-decoration: none;	
+}
+
+.action-button .material-icons {
+    font-size: 50px;
+}
+
+.action-button:active
+{
+    transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+    border-bottom: 1px solid;
+}
+
+
+.navbar.theme-teal, .searchbar.theme-teal, .subnavbar.theme-teal, .theme-teal .navbar, .theme-teal .searchbar, .theme-teal .subnavbar, .theme-teal .toolbar, .toolbar.theme-teal {
+    background: none;
+}
+
+.toolbar.toolbar-bottom.toolbar-preguntio {
+    background: none;
+    /*background-color: rgba(255,255,255,0.1);*/    
+    height: 90px;
+}
+
+.toolbar.toolbar-bottom.toolbar-preguntio .toolbar-inner {
+    padding: 0 20px;
+}
+
+a.action-button.blue
+{
+    color: #3498DB;
+    text-shadow: 0px -2px #2980B9;
+}
+
+a.action-button.red
+{
+    color: #E74C3C;
+    text-shadow: 0px -2px #BD3E31;
+}
+
+a.action-button.green
+{
+    color: #82BF56;
+    text-shadow: 0px -2px #669644;
+}
+
+a.action-button.yellow
+{
+    color: #F2CF66;
+    text-shadow: 0px -2px #D1B358;
+}
+
+a.action-button.grey {
+    color: #c7c7c7;
+    text-shadow: 0px 0px #D1B358;
+}
+
+.page-content {
+    background-color: #B71427;
 }

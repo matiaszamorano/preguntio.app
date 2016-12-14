@@ -34,15 +34,21 @@ preguntio.ui.preguntas = (function () {
 
     function pintarOpinion() {
         var opinion = $$(".swiper-slide.swiper-slide-active").attr('data-me-gusta');
+        $$(".no-me-gusta-icono").addClass("red");
+        $$(".me-gusta-icono").addClass("green");
         if (opinion === "1") {
-            $$(".me-gusta-icono").addClass("verde");
-            $$(".no-me-gusta-icono").removeClass("verde");
+            $$(".me-gusta-icono").addClass("green");
+            $$(".me-gusta-icono").removeClass("grey");
+            $$(".no-me-gusta-icono").addClass("grey");
+            $$(".no-me-gusta-icono").removeClass("red");
         } else if (opinion === "0") {
-            $$(".me-gusta-icono").removeClass("verde");
-            $$(".no-me-gusta-icono").addClass("verde");
+            $$(".me-gusta-icono").addClass("grey");
+            $$(".me-gusta-icono").removeClass("green");
+            $$(".no-me-gusta-icono").addClass("red");
+            $$(".no-me-gusta-icono").removeClass("grey");
         } else {
-            $$(".me-gusta-icono").removeClass("verde");
-            $$(".no-me-gusta-icono").removeClass("verde");
+            $$(".me-gusta-icono").removeClass("grey");
+            $$(".no-me-gusta-icono").removeClass("grey");
         }
     }
 
@@ -56,7 +62,7 @@ preguntio.ui.preguntas = (function () {
         } else if (meGusta === "0") {
             var actual = mySwiper.activeIndex;
             mySwiper.slideNext();
-            mySwiper.removeSlide(actual);
+//            mySwiper.removeSlide(actual);
         }
         pintarOpinion();
     }
