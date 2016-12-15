@@ -1,7 +1,6 @@
 preguntio.ui.preguntas = (function () {
 
     var mySwiper;
-    var timeoutOpinion;
 
     function recargarPreguntas() {
         var template = $$('#pregunta-template').html();
@@ -34,45 +33,28 @@ preguntio.ui.preguntas = (function () {
     }
 
     function pintarOpinion() {
-        $$(".toolbar-preguntio").css("visibility", "hidden");
         var opinion = $$(".swiper-slide.swiper-slide-active").attr('data-me-gusta');
-        var $noMeGusta = $$(".no-me-gusta-icono");
         var $meGusta = $$(".me-gusta-icono");
-        $noMeGusta.addClass("white");
-        $meGusta.addClass("white");
         if (opinion === "1") {
-            $meGusta.addClass("white");
-            $meGusta.removeClass("grey");
-            $noMeGusta.addClass("grey");
-            $noMeGusta.removeClass("white");
-        } else if (opinion === "0") {
-            $meGusta.addClass("grey");
-            $meGusta.removeClass("white");
-            $noMeGusta.addClass("white");
-            $noMeGusta.removeClass("grey");
+            $meGusta.html("<i class='material-icons'>favorite</i>");
+            $meGusta.addClass("active");
         } else {
-            $meGusta.removeClass("grey");
-            $noMeGusta.removeClass("grey");
+            $meGusta.html("<i class='material-icons'>favorite_border</i>");
+            $meGusta.removeClass("active");
         }
-        clearTimeout(timeoutOpinion);
-        timeoutOpinion = setTimeout(function () {
-            document.getElementById('toolbar').style.visibility = "visible";
-        }, 2000);
     }
 
     function guardarOpinion() {
-        var meGusta = $$(this).attr('data-opinion');
+        var $meGusta = $$(".me-gusta-icono");
+        var id = $$(".swiper-slide.swiper-slide-active").attr('data-id');
+        var meGusta = 1;
+        if ($meGusta.hasClass("active")) {
+            meGusta = 0;
+        }
+        preguntio.service.preguntas.guardarOpinion(id, meGusta);
         $$(".swiper-slide.swiper-slide-active").attr('data-me-gusta', meGusta);
         pintarOpinion();
-        var id = $$(".swiper-slide.swiper-slide-active").attr('data-id');
-        preguntio.service.preguntas.guardarOpinion(id, meGusta);
-        if (meGusta === "1") {
-            mySwiper.slideNext();
-        } else if (meGusta === "0") {
-//            var actual = mySwiper.activeIndex;
-            mySwiper.slideNext();
-//            mySwiper.removeSlide(actual);
-        }
+        mySwiper.slideNext();
     }
 
     function crearPregunta() {

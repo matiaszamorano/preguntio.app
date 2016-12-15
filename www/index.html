@@ -43,10 +43,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="toolbar" class="toolbar toolbar-bottom toolbar-preguntio">
+
+                        <div class="toolbar toolbar-bottom">
                             <div class="toolbar-inner">
-                                <a href="#" class="action-button shadow animate preguntio-opinion me-gusta-icono" data-opinion="1"><i class="material-icons">thumb_up</i></a>
-                                <a href="#" class="action-button shadow animate preguntio-opinion no-me-gusta-icono" data-opinion="0"><i class="material-icons">thumb_down</i></a>
+                                <a href="#" class="link"><i class="material-icons">chevron_left</i></a>
+                                <a href="#" class="link preguntio-opinion me-gusta-icono" data-opinion="1"><i class="material-icons">favorite_border</i></a>
+                                <a href="#" class="link"><i class="material-icons">chevron_right</i></a>
                             </div>
                         </div>
 
@@ -59,8 +61,6 @@
                                         <!-- Slides -->
 
                                     </div>
-                                    <!-- Pagination, if required -->
-                                    <div class="swiper-pagination"></div>
                                 </div>
                             </div>
                         </div>
@@ -92,13 +92,13 @@
         <script src="js/app/ui/preguntas/preguntas.js" type="text/javascript"></script>
 
         <script type="text/javascript">
-            var myApp = new Framework7({
-                material: true
-            });
+var myApp = new Framework7({
+    material: true
+});
 
-            var $$ = Dom7;
-            var mainView = myApp.addView('.view-main');
-            preguntio.init();
+var $$ = Dom7;
+var mainView = myApp.addView('.view-main');
+preguntio.init();
 
 //            document.addEventListener("deviceready", onDeviceReady, false);
 //            function onDeviceReady() {
