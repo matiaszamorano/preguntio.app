@@ -62,7 +62,6 @@ preguntio.ui.preguntas = (function () {
         preguntio.service.preguntas.guardarOpinion(id, meGusta);
         $$(".swiper-slide.swiper-slide-active").attr('data-me-gusta', meGusta);
         pintarOpinion();
-        mySwiper.slideNext();
     }
 
     function crearPregunta() {
