@@ -28,6 +28,14 @@ preguntio.ui.preguntas = (function () {
 
             $$('.preguntio-opinion').on('click', guardarOpinion);
 
+            $$('.izquierda').on('click', function () {
+                mySwiper.slidePrev();
+            });
+
+            $$('.derecha').on('click', function () {
+                mySwiper.slideNext();
+            });
+
             mySwiper.on('onSlideChangeStart', pintarOpinion);
         });
     }
