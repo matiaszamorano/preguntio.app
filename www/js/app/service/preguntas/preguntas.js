@@ -3,7 +3,7 @@ preguntio.service.preguntas = (function () {
     var keyStoragePreguntasUsuario = "preguntasUsuario";
 
     function get(callback) {
-        $$.get('https://preguntio.herokuapp.com/preguntas', null, function (data) {
+        $$.get('https://preguntio.herokuapp.com/api/preguntas', null, function (data) {
             callback(data);
             window.localStorage.setItem(keyStoragePreguntasUsuario, data);
         });
