@@ -9,9 +9,8 @@ preguntio.ui.categorias = (function () {
                 var template = $$('#categoria-template').html();
                 var compiledTemplate = Template7.compile(template);
                 var categorias = JSON.parse(data)._embedded;
-                console.log(categorias);
+                
                 var html = compiledTemplate(categorias);
-                console.log(html);
                 $$('#listado-categorias').html(html);
             });
         });
