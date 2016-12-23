@@ -2,41 +2,43 @@ preguntio.ui.preguntas = (function () {
 
     var mySwiper;
 
-    function recargarPreguntas() {
-        var template = $$('#pregunta-template').html();
+    function recargarPreguntas(page) {
+        $$.get(page.context.href, null, function (data) {
+            var categoria = JSON.parse(data);
+            $$(".titulo-categoria").text(categoria.titulo);
+            $$.get(categoria._links.preguntas.href, null, function (data) {
+                var template = $$('#pregunta-template').html();
+                var compiledTemplate = Template7.compile(template);
+                var preguntas = JSON.parse(data)._embedded;
 
-        var compiledTemplate = Template7.compile(template);
+                for (var i = 0; i < preguntas.preguntas.length; i++) {
+                    preguntas.preguntas[i].meGusta = window.localStorage.getItem(preguntas.preguntas[i]._links.self.href);
+                }
 
-        preguntio.service.preguntas.get(function (data) {
+                var html = compiledTemplate(preguntas);
+                $$('#preguntas-slide').html(html);
 
-            var preguntas = JSON.parse(data)._embedded;
-            for (var i = 0; i < preguntas.preguntas.length; i++) {
-                preguntas.preguntas[i].meGusta = window.localStorage.getItem(preguntas.preguntas[i]._links.self.href);
-            }
+                mySwiper = myApp.swiper('.swiper-container-preguntas', {
+                    speed: 400,
+                    spaceBetween: 100
+                });
 
-            var html = compiledTemplate(preguntas);
-            $$('#preguntas-slide').html(html);
+                pintarOpinion();
 
-            mySwiper = myApp.swiper('.swiper-container-preguntas', {
-                speed: 400,
-                spaceBetween: 100
+                $$('.borrar-pregunta').on('click', borrarPregunta);
+
+                $$('.preguntio-opinion').on('click', guardarOpinion);
+
+                $$('.izquierda').on('click', function () {
+                    mySwiper.slidePrev();
+                });
+
+                $$('.derecha').on('click', function () {
+                    mySwiper.slideNext();
+                });
+
+                mySwiper.on('onSlideChangeStart', pintarOpinion);
             });
-
-            pintarOpinion();
-
-            $$('.borrar-pregunta').on('click', borrarPregunta);
-
-            $$('.preguntio-opinion').on('click', guardarOpinion);
-
-            $$('.izquierda').on('click', function () {
-                mySwiper.slidePrev();
-            });
-
-            $$('.derecha').on('click', function () {
-                mySwiper.slideNext();
-            });
-
-            mySwiper.on('onSlideChangeStart', pintarOpinion);
         });
     }
 
@@ -108,8 +110,8 @@ preguntio.ui.preguntas = (function () {
         return false;
     }
 
-    function init() {
-        recargarPreguntas();
+    function init(page) {
+        recargarPreguntas(page);
     }
 
     return {
