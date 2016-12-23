@@ -96,8 +96,24 @@
             <p>{{descripcionCorta}}</p>
             </div>
             </div>
-            <div class="card-footer"><a href="#" class="link" data-id="{{id}}"></a><a href="categorias.html" class="link">Ver más</a></div>
+            <div class="card-footer">
+            <a href="#" class="link"></a>
+            <a href="categorias.html" data-context='{"href": "{{_links.self.href}}"}' class="link">Ver más</a>
             </div>
+            </div>
+            {{/each}}
+        </script>
+        
+        <script id="categoria-template" type="text/template7">
+            {{#each categorias}}
+            <li>
+            <a href="preguntas.html"  data-context='{"href": "{{_links.self.href}}"}' class="item-link item-content">
+            <div class="item-inner">
+            <div class="item-title">{{titulo}}</div>
+            <div class="item-after"><span class="badge">6</span></div>
+            </div>
+            </a>
+            </li>
             {{/each}}
         </script>
 
@@ -119,7 +135,6 @@
 
         <script src="js/app/preguntio.js" type="text/javascript"></script>
         <script src="js/app/service/service.js" type="text/javascript"></script>
-        <script src="js/app/service/colecciones/colecciones.js" type="text/javascript"></script>
         <script src="js/app/service/categorias/categorias.js" type="text/javascript"></script>
         <script src="js/app/service/preguntas/preguntas.js" type="text/javascript"></script>
         <script src="js/app/ui/ui.js" type="text/javascript"></script>
@@ -129,7 +144,8 @@
 
         <script type="text/javascript">
 var myApp = new Framework7({
-    material: true
+    material: true,
+    template7Pages: true
 });
 
 var $$ = Dom7;
