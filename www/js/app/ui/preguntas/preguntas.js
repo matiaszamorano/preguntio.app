@@ -108,7 +108,12 @@ preguntio.ui.preguntas = (function () {
         return false;
     }
 
+    function init() {
+        recargarPreguntas();
+    }
+
     return {
+        init: init,
         recargarPreguntas: recargarPreguntas,
         crearPregunta: crearPregunta,
         borrarPregunta: borrarPregunta

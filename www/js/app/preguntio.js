@@ -12,7 +12,8 @@ var preguntio = (function () {
             });
         });
 
-        mostrarTutorial();
+        initApp();
+//        mostrarTutorial();
         $$('a').on('click', function (e) { //Close panel when you open a new page
             myApp.closePanel();
         });
@@ -23,19 +24,14 @@ var preguntio = (function () {
             preguntio.ui.initTutorial();
         } else {
             initApp();
+            window.localStorage.setItem("tutorial", 1);
         }
     }
 
     function initApp() {
-        window.localStorage.setItem("tutorial", 1);
-
-        myApp.onPageInit('preguntas', function (page) {
-            preguntio.ui.preguntas.recargarPreguntas();
-        });
-
-        $$(document).on('pageInit', function () {
-            $$('#enviar-pregunta').on('click', preguntio.ui.preguntas.crearPregunta);
-        });
+        preguntio.ui.colecciones.init();
+        myApp.onPageInit('categorias', preguntio.ui.categorias.init);
+        myApp.onPageInit('preguntas', preguntio.ui.preguntas.init);
     }
 
     return {
