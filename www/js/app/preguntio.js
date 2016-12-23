@@ -29,7 +29,9 @@ var preguntio = (function () {
     function initApp() {
         window.localStorage.setItem("tutorial", 1);
 
-        preguntio.ui.preguntas.recargarPreguntas();
+        myApp.onPageInit('preguntas', function (page) {
+            preguntio.ui.preguntas.recargarPreguntas();
+        });
 
         $$(document).on('pageInit', function () {
             $$('#enviar-pregunta').on('click', preguntio.ui.preguntas.crearPregunta);

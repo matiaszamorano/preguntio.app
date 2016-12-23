@@ -51,10 +51,11 @@
 
 
 .navbar.theme-teal, .searchbar.theme-teal, .subnavbar.theme-teal, .theme-teal .navbar, .theme-teal .searchbar, .theme-teal .subnavbar, .theme-teal .toolbar, .toolbar.theme-teal {
-    background: none;
+    background-color: #B71427;
 }
 
-.page-content {
+.swiper-container-preguntas,
+.contenedor-preguntas{
     background-color: #B71427;
 }
 
