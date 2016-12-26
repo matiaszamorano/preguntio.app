@@ -30,6 +30,7 @@ var preguntio = (function () {
 
     function initApp() {
         preguntio.ui.colecciones.init();
+        myApp.onPageInit('index', preguntio.ui.colecciones.init);
         myApp.onPageInit('categorias', preguntio.ui.categorias.init);
         myApp.onPageInit('preguntas', preguntio.ui.preguntas.init);
     }

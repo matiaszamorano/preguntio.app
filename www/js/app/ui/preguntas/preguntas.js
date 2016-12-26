@@ -25,8 +25,6 @@ preguntio.ui.preguntas = (function () {
 
                 pintarOpinion();
 
-                $$('.borrar-pregunta').on('click', borrarPregunta);
-
                 $$('.preguntio-opinion').on('click', guardarOpinion);
 
                 $$('.izquierda').on('click', function () {
@@ -66,59 +64,13 @@ preguntio.ui.preguntas = (function () {
         pintarOpinion();
     }
 
-    function crearPregunta() {
-        queryForm = myApp.formToJSON('#nueva-pregunta-form');
-        var parameters = {
-            url: 'https://preguntio.herokuapp.com/preguntas',
-            method: "POST",
-            cache: false,
-            contentType: "application/json",
-            processData: true,
-            success: function (data) {
-                myApp.mainView.back();
-                myApp.addNotification({
-                    message: 'Pregunta Enviada',
-                    closeOnClick: true
-                });
-                recargarPreguntas();
-            },
-            dataType: 'json',
-            data: JSON.stringify(queryForm)
-        };
-
-        $$.ajax(parameters);
-        return false;
-    }
-
-    function borrarPregunta() {
-        var url = $$(this).attr('data-url');
-        var parameters = {
-            url: url,
-            method: "DELETE",
-            processData: true,
-            complete: function (data) {
-                mySwiper.removeSlide(mySwiper.activeIndex);
-                myApp.addNotification({
-                    message: 'Pregunta Eliminada',
-                    closeOnClick: true,
-                });
-            },
-            dataType: 'json'
-        };
-        $$.ajax(parameters);
-
-        return false;
-    }
-
     function init(page) {
         recargarPreguntas(page);
     }
 
     return {
         init: init,
-        recargarPreguntas: recargarPreguntas,
-        crearPregunta: crearPregunta,
-        borrarPregunta: borrarPregunta
+        recargarPreguntas: recargarPreguntas
     };
 })();
 
