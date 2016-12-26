@@ -3,10 +3,10 @@ preguntio.ui.preguntas = (function () {
     var mySwiper;
 
     function recargarPreguntas(page) {
-        $$.get(page.context.href, null, function (data) {
+        preguntio.service.get(page.context.href, function (data) {
             var categoria = JSON.parse(data);
             $$(".titulo-categoria").text(categoria.titulo);
-            $$.get(categoria._links.preguntas.href, null, function (data) {
+            preguntio.service.get(categoria._links.preguntas.href, function (data) {
                 var template = $$('#pregunta-template').html();
                 var compiledTemplate = Template7.compile(template);
                 var preguntas = JSON.parse(data)._embedded;
