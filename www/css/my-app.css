@@ -45,11 +45,6 @@
     color: #fff;
 }
 
-.contenedor-pregunta {
-    height: 80vh;
-}
-
-
 .navbar.theme-teal, .searchbar.theme-teal, .subnavbar.theme-teal, .theme-teal .navbar, .theme-teal .searchbar, .theme-teal .subnavbar, .theme-teal .toolbar, .toolbar.theme-teal {
     background-color: #B71427;
 }
