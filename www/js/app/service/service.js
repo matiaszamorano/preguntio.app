@@ -15,7 +15,6 @@ preguntio.service = (function () {
             if (diferencia >= tiempoCache) {
                 getFromServer(uri, callback);
             } else {
-                console.log("cache");
                 callback(object.value);
                 getFromServer(uri,function(){});
             }
@@ -23,7 +22,6 @@ preguntio.service = (function () {
     }
 
     function getFromServer(uri, callback) {
-        console.log("server");
         $$.get(uri, null, function (data) {
             var object = {value: data, timestamp: new Date().getTime()};
             storage.setItem(uri, JSON.stringify(object));
