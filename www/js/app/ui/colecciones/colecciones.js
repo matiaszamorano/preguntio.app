@@ -5,7 +5,7 @@ preguntio.ui.colecciones = (function () {
 
         var compiledTemplate = Template7.compile(template);
 
-        preguntio.service.get('http://preguntio.herokuapp.com/api/colecciones', function (data) {
+        preguntio.service.get('http://preguntio.herokuapp.com/api/colecciones?sort=id,desc', function (data) {
             var colecciones = JSON.parse(data)._embedded;
             var html = compiledTemplate(colecciones);
             $$('#colecciones').html(html);
