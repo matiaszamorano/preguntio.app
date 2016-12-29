@@ -67,13 +67,16 @@
             <div class="card demo-card-header-pic">
             <div style="background-image:url({{imagen}})" valign="bottom" class="card-header color-white no-border">
             {{titulo}}
+            {{#if nueva}}<span class="badge bg-green">NUEVO</span>{{/if}}
             </div>
             <div class="card-content">
             <div class="card-content-inner">
+            {{#each tags}}
             <div class="chip">
-            <div class="chip-media bg-red">C</div>
-            <div class="chip-label">Coaching</div>
+            <div class="chip-media bg-blue"></div>
+            <div class="chip-label">{{this}}</div>
             </div>
+            {{/each}}
             <p>{{descripcionCorta}}</p>
             </div>
             </div>
