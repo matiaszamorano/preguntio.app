@@ -1,7 +1,7 @@
 preguntio.ui.colecciones = (function () {
 
-    //var url = 'http://preguntio.herokuapp.com/';
-    var url = 'http://localhost:8080/'
+    var url = 'http://preguntio.herokuapp.com/';
+    //var url = 'http://localhost:8080/'
 
     function init() {
         var template = $$('#coleccion-template').html();
