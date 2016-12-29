@@ -11,8 +11,10 @@ preguntio.ui.colecciones = (function () {
         preguntio.service.get(url + 'api/colecciones?sort=id,desc', function (data) {
             var colecciones = JSON.parse(data)._embedded;
             colecciones.colecciones.forEach(function (item) {
-                var tags = item.tags.split(",");
-                item.tags = tags;
+                if (item.tags) {
+                    var tags = item.tags.split(",");
+                    item.tags = tags;
+                }
             });
             var html = compiledTemplate(colecciones);
             $$('#colecciones').html(html);
