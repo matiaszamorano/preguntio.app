@@ -13,18 +13,18 @@ var preguntio = (function () {
         });
 
         initApp();
-//        mostrarTutorial();
+        mostrarTutorial();
         $$('a').on('click', function (e) { //Close panel when you open a new page
             myApp.closePanel();
         });
     }
 
     function mostrarTutorial() {
-        if (!JSON.parse(window.localStorage.getItem("tutorial"))) {
+        if (!window.localStorage.getItem("tutorial")) {
             preguntio.ui.initTutorial();
+            window.localStorage.setItem("tutorial", 1);
         } else {
             initApp();
-            window.localStorage.setItem("tutorial", 1);
         }
     }
 

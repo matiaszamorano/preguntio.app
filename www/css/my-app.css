@@ -3,8 +3,8 @@
 *******************************************************************************/
 .pnt-tutorial-icon,
 .pnt-tutorial-icon .material-icons{
-    font-size: 250px;
-    line-height: 170px;
+    font-size: 190px;
+    line-height: 200px;
 }
 
 
@@ -13,14 +13,15 @@
     padding: 10px;
     border-radius: 10px;
     color: #0da6ec;
+    font-family: Roboto,Noto,Helvetica,Arial,sans-serif;
 }
 
 .welcomescreen-container .swiper-slide {
-    background: #009688;    
+    background: #B71427;    
 }
 
 .welcomescreen-text {
-    font-family: Roboto,Noto,Helvetica,Arial,sans-serif;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 /*******************************************************************************
@@ -28,7 +29,7 @@
 *******************************************************************************/
 
 .swiper-container, title {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 
@@ -45,7 +46,7 @@
     color: #fff;
 }
 
-.navbar.theme-teal, .searchbar.theme-teal, .subnavbar.theme-teal, .theme-teal .navbar, .theme-teal .searchbar, .theme-teal .subnavbar, .theme-teal .toolbar, .toolbar.theme-teal {
+.navbar, .searchbar, .subnavbar, .searchbar, .subnavbar,  .toolbar {
     background-color: #B71427;
 }
 

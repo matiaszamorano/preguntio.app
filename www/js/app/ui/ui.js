@@ -4,23 +4,28 @@ preguntio.ui = (function () {
         var welcomescreen_slides = [
             {
                 id: 'slide0',
-                picture: '<div class="pnt-tutorial-icon"><i class="material-icons">live_help</i></div>',
-                text: 'Bienvenido a Pregunt.io, la aplicación para descubrir preguntas.'
+                picture: '<div class="pnt-tutorial-icon">¿?</div>',
+                text: 'Bienvenido a Preguntio, la primer app enfocada en las preguntas.'
             },
             {
                 id: 'slide1',
                 picture: '<div class="pnt-tutorial-icon"><i class="material-icons">fingerprint</i></div>',
-                text: 'Las preguntas tienen el poder de generar ideas reveladoras.'
+                text: 'Porque en el Coaching la clave no son las respuestas, sino las preguntas.'
             },
             {
                 id: 'slide2',
-                picture: '<div class="pnt-tutorial-icon"><i class="material-icons">star_border</i></div>',
-                text: 'Es hora de dejar de pensar en respuestas y guardar tus preguntas favoritas.<br><br><a class="pnt-tutorial-close-btn pnt-js-tutorial-close-btn" href="#">Empezar</a>'
+                picture: '<div class="pnt-tutorial-icon"><i class="material-icons">build</i></div>',
+                text: 'Vas a encontrar cientos de preguntas ordenadas en colecciones según el objetivo.'
+            },
+            {
+                id: 'slide3',
+                picture: '<div class="pnt-tutorial-icon"><i class="material-icons">favorite_border</i></div>',
+                text: 'Guardá tus colecciones y preguntas favoritas para cuando las necesites.<br><br><a class="pnt-tutorial-close-btn pnt-js-tutorial-close-btn" href="#">Empezar</a>'
             }
         ];
 
         var options = {
-            bgcolor: '#009688',
+            bgcolor: '#B71427',
             fontcolor: '#FFF',
             closeButtonText: 'Saltar',
             onClosed: preguntio.initApp
