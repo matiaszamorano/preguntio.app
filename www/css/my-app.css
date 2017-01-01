@@ -104,3 +104,13 @@ a.action-button.grey {
 .fuente {
     font-size: 10px;
 }
+
+.preguntio-panel-header-pic .content-block{
+    background: #B71427;  
+    margin: 0;
+    padding: 32px 0 16px;
+}
+
+.preguntio-menu-list-block i {
+    vertical-align: sub;
+}

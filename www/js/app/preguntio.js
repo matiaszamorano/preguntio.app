@@ -11,14 +11,15 @@ var preguntio = (function () {
                 location.reload();
             });
         });
-
         initApp();
         mostrarTutorial();
         $$('a').on('click', function (e) { //Close panel when you open a new page
             myApp.closePanel();
         });
+        $$('.preguntio-ayuda').on('click', function (e) {
+            preguntio.ui.initTutorial();
+        });
     }
-
     function mostrarTutorial() {
         if (!window.localStorage.getItem("tutorial")) {
             preguntio.ui.initTutorial();
