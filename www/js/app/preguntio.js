@@ -11,7 +11,6 @@ var preguntio = (function () {
                 location.reload();
             });
         });
-        initApp();
         mostrarTutorial();
         $$('a').on('click', function (e) { //Close panel when you open a new page
             myApp.closePanel();

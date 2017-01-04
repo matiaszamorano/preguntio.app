@@ -29,13 +29,28 @@ preguntio.ui.preguntas = (function () {
 
                 $$('.izquierda').on('click', function () {
                     mySwiper.slidePrev();
+                    return false;
                 });
 
                 $$('.derecha').on('click', function () {
                     mySwiper.slideNext();
+                    return false;
                 });
 
                 mySwiper.on('onSlideChangeStart', pintarOpinion);
+
+                mySwiper.on('onSlideChangeEnd', function () {
+                    if (mySwiper.isBeginning) {
+                        $$(".izquierda i").addClass("no-visible");
+                    } else {
+                        $$(".izquierda i").removeClass("no-visible");
+                    }
+                    if (mySwiper.isEnd) {
+                        $$(".derecha i").addClass("no-visible");
+                    } else {
+                        $$(".derecha i").removeClass("no-visible");
+                    }
+                });
             });
         });
     }

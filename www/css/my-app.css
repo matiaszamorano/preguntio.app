@@ -128,3 +128,7 @@ a .preguntio-descripcion {
     background-size: cover;
     background-position: center;
 }
+
+.no-visible {
+    visibility: hidden;
+}
