@@ -3,7 +3,6 @@ preguntio.ui.preguntas = (function () {
     var mySwiper;
 
     function recargarPreguntas(page) {
-        //myApp.showPreloader("Cargando...");
         var container = $$('body');
         myApp.showProgressbar(container, 'red');
         preguntio.service.get(page.context.href, function (data) {
