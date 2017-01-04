@@ -1,6 +1,7 @@
 preguntio.ui.categorias = (function () {
 
     function init(page) {
+        myApp.showPreloader("Cargando...");
         preguntio.service.get(page.context.href, function (data) {
             var coleccion = JSON.parse(data);
             $$(".titulo-coleccion").text(coleccion.titulo);
@@ -14,6 +15,7 @@ preguntio.ui.categorias = (function () {
 
                 var html = compiledTemplate(categorias);
                 $$('#listado-categorias').html(html);
+                myApp.hidePreloader();
             });
         });
     }
