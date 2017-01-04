@@ -132,3 +132,9 @@ a .preguntio-descripcion {
 .no-visible {
     visibility: hidden;
 }
+
+.contenedor-preguntas .content-block {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+

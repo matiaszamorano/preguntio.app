@@ -67,7 +67,8 @@ preguntio.ui.preguntas = (function () {
         }
     }
 
-    function guardarOpinion() {
+    function guardarOpinion(event) {
+        event.preventDefault();
         var $meGusta = $$(".me-gusta-icono");
         var id = $$(".swiper-slide.swiper-slide-active").attr('data-id');
         var meGusta = 1;
@@ -77,6 +78,7 @@ preguntio.ui.preguntas = (function () {
         preguntio.service.preguntas.guardarOpinion(id, meGusta);
         $$(".swiper-slide.swiper-slide-active").attr('data-me-gusta', meGusta);
         pintarOpinion();
+        return false;
     }
 
     function init(page) {
