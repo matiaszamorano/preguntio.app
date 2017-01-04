@@ -5,6 +5,7 @@ preguntio.ui.colecciones = (function () {
 
     function init() {
         myApp.showPreloader("Cargando...");
+
         var template = $$('#coleccion-template').html();
 
         var compiledTemplate = Template7.compile(template);
@@ -20,6 +21,7 @@ preguntio.ui.colecciones = (function () {
             var html = compiledTemplate(colecciones);
             $$('#colecciones').html(html);
             myApp.hidePreloader();
+
         });
 
     }

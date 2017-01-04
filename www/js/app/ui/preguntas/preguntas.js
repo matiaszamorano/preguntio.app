@@ -3,7 +3,9 @@ preguntio.ui.preguntas = (function () {
     var mySwiper;
 
     function recargarPreguntas(page) {
-        myApp.showPreloader("Cargando...");
+        //myApp.showPreloader("Cargando...");
+        var container = $$('body');
+        myApp.showProgressbar(container, 'red');
         preguntio.service.get(page.context.href, function (data) {
             var categoria = JSON.parse(data);
             $$(".titulo-categoria").text(categoria.titulo);
@@ -52,7 +54,7 @@ preguntio.ui.preguntas = (function () {
                         $$(".derecha i").removeClass("no-visible");
                     }
                 });
-                myApp.hidePreloader();
+                myApp.hideProgressbar();
             });
         });
     }
