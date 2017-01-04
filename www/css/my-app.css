@@ -114,3 +114,17 @@ a.action-button.grey {
 .preguntio-menu-list-block i {
     vertical-align: sub;
 }
+
+a .preguntio-descripcion {
+    color: #212121;
+}
+
+.content-block {
+    margin-top: 24px;
+}
+
+.demo-card-header-pic .card-header {
+    height: 40vw;
+    background-size: cover;
+    background-position: center;
+}

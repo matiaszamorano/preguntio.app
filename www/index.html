@@ -20,13 +20,7 @@
 
         <link href="css/welcomescreen.css" rel="stylesheet" type="text/css"/>
         <link href="css/my-app.css" rel="stylesheet" type="text/css"/>
-        <style>
-            .demo-card-header-pic .card-header {
-                height: 40vw;
-                background-size: cover;
-                background-position: center;
-            }
-        </style>
+        <link rel="stylesheet" media="all and (orientation:landscape)" href="css/landscape.css">
     </head>
 
     <body>
@@ -90,6 +84,7 @@
 
         <script id="coleccion-template" type="text/template7">
             {{#each colecciones}}
+            <a href="categorias.html" data-context='{"href": "{{_links.self.href}}"}' class="link">
             <div class="card demo-card-header-pic">
             <div style="background-image:url({{imagen}})" valign="bottom" class="card-header color-white no-border">
             {{titulo}}
@@ -103,7 +98,7 @@
             <div class="chip-label">{{this}}</div>
             </div>
             {{/each}}
-            <p>{{descripcionCorta}}</p>
+            <p class="preguntio-descripcion">{{descripcionCorta}}</p>
             </div>
             </div>
             <div class="card-footer">
@@ -111,6 +106,7 @@
             <a href="categorias.html" data-context='{"href": "{{_links.self.href}}"}' class="link">Ver más</a>
             </div>
             </div>
+            </a>
             {{/each}}
         </script>
 
